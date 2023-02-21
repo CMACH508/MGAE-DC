@@ -18,7 +18,7 @@ tensorflow 2.4.1
 
 
 ## Training
-###The embedding module
+### The embedding module
 python codes/get_oneil_mgaedc_representation.py -learning_rate 0.001 -epochs 10000 -embedding_dim 320 -drop_out 0.2 -weight_decay 0 -val_test_size 0.1  
 This script is used to extract the cell line-specific and common drug embeddings through multi-channel graph autoencoders in the embedding module. 
 
@@ -33,7 +33,7 @@ This script is used to extract the cell line-specific and common drug embeddings
 | val_test_size|  0.1|  the rate of validation and test samples. |
 
 
-###The predictor module
+### The predictor module
 python codes/get_oneil_mgaedc.py -learning_rate 0.01 -epochs 500 -batch 320 -drop_out 0.2 -hidden 8192 -patience 100 
 This script is used to predict the synergistic effects of drug combinations in the predictore module.
 
@@ -48,10 +48,10 @@ This script is used to predict the synergistic effects of drug combinations in t
 | patience|  100|  the patience for early stop. |
 
 
-###Predicting with pretrained model
+### Predicting with pretrained model
+python get_kgedc_load_pretrainmodel.py -modelfile ../trained_model/pretrain_model.pkl
 
-
-The size of pretrained models are too large, so they are accessible with baidu netdisk [links](https://pan.baidu.com/s/1lKo-sYSD_q-DfXCKMzmKpg). 密码：bkri.
+The script is used to predict with the pretrained MGAEDC model on the ONEIL datasets. The size of pretrained models are too large, so they are accessible with baidu netdisk [links](https://pan.baidu.com/s/1lKo-sYSD_q-DfXCKMzmKpg). 密码：bkri.
 
 
 ## Reference
